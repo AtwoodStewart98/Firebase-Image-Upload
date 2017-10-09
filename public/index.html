@@ -10,24 +10,34 @@
     <!--
             This is where
                 your config scripts
-                    will go. 
+                    will go.
         -->
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+var config = {
+  apiKey: "AIzaSyALO5WcM_W_naaq6B14W1F4hZvlx0375tU",
+  authDomain: "brownbag-7941a.firebaseapp.com",
+  databaseURL: "https://brownbag-7941a.firebaseio.com",
+  projectId: "brownbag-7941a",
+  storageBucket: "brownbag-7941a.appspot.com",
+  messagingSenderId: "307867077740"
+};
+firebase.initializeApp(config);
+</script>
 </head>
 
 <body ng-controller="myCtrl">
     <div>
-        <!--
-            This is where
-                your image upload buttons
-                    will go 
-        -->
+      <form name="form">
+        <img style="width: 300px;" ngf-thumbnail="image">
+        <button name="image" ngf-select ng-model="image">Upload image</button>
+        <button ng-click="submit(image)">Submit</button>
+      </form>
     </div>
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
-    <!-- 
-        MAKE SURE YOU INCLUDE YOUR ng-file-upload.js SCRIPT!!!!!
-    -->
     <script src="ng-file-upload.js"></script>
     <script src="ctrl.js"></script>
     <script src="service.js"></script>
